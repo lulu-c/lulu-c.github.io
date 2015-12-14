@@ -116,7 +116,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/hexo-github/" style="font-size: 10px;">-hexo -github</a>
 					</div>
 				</section>
 				
@@ -177,6 +177,87 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo-github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/14/hexo-github搭建个人博客/" class="article-date">
+  	<time datetime="2015-12-14T12:52:30.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/14/hexo-github搭建个人博客/">hexo+github搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前提：安装node.js和git并进行相应的环境配置（git版本不要太高）</p>
+<p>##安装hexo<br>方法一：输入<code>npm install -g hexo</code>安装hexo<br><br>这种安装方法也是会因为被“墙”所以失效<br></p>
+<p>方法二：使用淘宝NPM镜像<code>cnpm install -g hexo-cli</code><br><br>输入<code>hexo -v</code>检查是否安装成功。</p>
+<p>输入<code>npm install hexo-deployer-git --save</code>或者<code>cnpm install hexo-deployer-git --save</code></p>
+<p>##运行hexo<br>安装完成后，打开node.js的命令行，在你需要创建项目的文件夹下（如F:\hexo）输入<code>hexo init</code>，hexo 即会自动在目标文件夹建立网站所需要的所有文件。<br><br><img src="http://m1.yea.im/4vt.png" alt=""></p>
+<p>##安装依赖包<br>输入<code>npm install</code>命令，这里也同样可能遇到被“墙”的问题，换输入<code>cnpm install</code>即可，（即在F:\hexo目录中安装 node_modules）</p>
+<p>##开启服务器<br>输入hexo server<br><img src="http://m1.yea.im/4vw.png" alt=""><br>打开浏览器，输入localhost:4000,就可以在看到你的刚刚搭建的博客了，按Ctrl+C 停止Server。</p>
+<p>输入<code>hexo new &quot;My New Post&quot;</code>新建一篇文章。会在F:\hexo\source_posts目录下生成一个markdown文件：My-New-Post.md<br><img src="http://m1.yea.im/4vx.png" alt=""><br>重新开启服务器就可以看到新建的文章。</p>
+<p><strong>注意：如果没有关闭服务器再新建文章，而是打开新的命令窗口直接新建文章，文章会被新建两次。</strong></p>
+<p>输入下面的命令，将markdown文件生成静态网页。<code>hexo generate</code>该命令执行完后，会在 F:\Hexo\public\ 目录下生成一系列html，css等文件。</p>
+<p>##部署到Github<br>github上创建账号<br>去<a href="https://github.com/注册账号，并建立repository" target="_blank" rel="external">https://github.com/注册账号，并建立repository</a><br>建立仓库名必须是XXX.github.io </p>
+<p>在F:\hexo文件下找到_config.yml文件，将里面的deployment项修改为：</p>
+<blockquote>
+<p>deploy:<br><br>  type: git<br><br>  repository: <a href="https://github.com/username/usernme.github.io.git" target="_blank" rel="external">https://github.com/username/usernme.github.io.git</a><br>  branch: master</p>
+</blockquote>
+<p>username为自己github的账号名。<br></p>
+<p>##报错</p>
+<p><img src="http://m1.yea.im/4vy.jpeg" alt=""><br>输入<code>npm install hexo-deployer-git --save</code>或者<code>cnpm install hexo-deployer-git --save</code>我们应该在安装完hexo就执行此步。<br>再输入<code>hexo generate</code></p>
+<p><strong>注意：有些新用户需要设置 ssh，否则上述命令会失败。ssh 的介绍和设置方法请看官方教程。<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a></strong></p>
+<p>每次修改完文件后要重新<code>hexo g</code>然后<code>hexo d</code>(这是都是命令hexo generate和hexo deploy简写，与上面的命令一致)<br>打开浏览器输入<a href="http://XXX.github.io" target="_blank" rel="external">http://XXX.github.io</a> 就是你的博客了。</p>
+<p>报错spawn git ENOENT</p>
+<blockquote>
+<p>Error: spawn git ENOENT<br>    at exports._errnoException (util.js:746:11)<br>    at Process.ChildProcess._handle.onexit (child_process.js:1053:32)<br>    at child_process.js:1144:20)<br>    at process._tickCallback (node.js:355:11)</p>
+</blockquote>
+<p>未添加Git环境变量引起，添加Git与git管理库的环境变量即可；<br>D:\Git\bin;D:\Git\libexec\git-core</p>
+<p>如果出现这样的错误，就是git的版本太高，我安装的是1.9.5的<br><img src="http://m1.yea.im/4vz.jpeg" alt=""></p>
+<p>hexo主题更换：<a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">http://www.zhihu.com/question/24422335</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github/">-hexo -github</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
