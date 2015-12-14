@@ -205,23 +205,22 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>前提：安装node.js和git并进行相应的环境配置（git版本不要太高）</p>
-<p>##安装hexo<br>方法一：输入<code>npm install -g hexo</code>安装hexo<br><br>这种安装方法也是会因为被“墙”所以失效<br></p>
+<h2 id="u5B89_u88C5hexo"><a href="#u5B89_u88C5hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>方法一：输入<code>npm install -g hexo</code>安装hexo<br><br>这种安装方法也是会因为被“墙”所以失效<br></p>
 <p>方法二：使用淘宝NPM镜像<code>cnpm install -g hexo-cli</code><br><br>输入<code>hexo -v</code>检查是否安装成功。</p>
 <p>输入<code>npm install hexo-deployer-git --save</code>或者<code>cnpm install hexo-deployer-git --save</code></p>
-<p>##运行hexo<br>安装完成后，打开node.js的命令行，在你需要创建项目的文件夹下（如F:\hexo）输入<code>hexo init</code>，hexo 即会自动在目标文件夹建立网站所需要的所有文件。<br><br><img src="http://m1.yea.im/4vt.png" alt=""></p>
-<p>##安装依赖包<br>输入<code>npm install</code>命令，这里也同样可能遇到被“墙”的问题，换输入<code>cnpm install</code>即可，（即在F:\hexo目录中安装 node_modules）</p>
-<p>##开启服务器<br>输入hexo server<br><img src="http://m1.yea.im/4vw.png" alt=""><br>打开浏览器，输入localhost:4000,就可以在看到你的刚刚搭建的博客了，按Ctrl+C 停止Server。</p>
+<h2 id="u8FD0_u884Chexo"><a href="#u8FD0_u884Chexo" class="headerlink" title="运行hexo"></a>运行hexo</h2><p>安装完成后，打开node.js的命令行，在你需要创建项目的文件夹下（如F:\hexo）输入<code>hexo init</code>，hexo 即会自动在目标文件夹建立网站所需要的所有文件。<br><br><img src="http://m1.yea.im/4vt.png" alt=""></p>
+<h2 id="u5B89_u88C5_u4F9D_u8D56_u5305"><a href="#u5B89_u88C5_u4F9D_u8D56_u5305" class="headerlink" title="安装依赖包"></a>安装依赖包</h2><p>输入<code>npm install</code>命令，这里也同样可能遇到被“墙”的问题，换输入<code>cnpm install</code>即可，（即在F:\hexo目录中安装 node_modules）</p>
+<h2 id="u5F00_u542F_u670D_u52A1_u5668"><a href="#u5F00_u542F_u670D_u52A1_u5668" class="headerlink" title="开启服务器"></a>开启服务器</h2><p>输入hexo server<br><img src="http://m1.yea.im/4vw.png" alt=""><br>打开浏览器，输入localhost:4000,就可以在看到你的刚刚搭建的博客了，按Ctrl+C 停止Server。</p>
 <p>输入<code>hexo new &quot;My New Post&quot;</code>新建一篇文章。会在F:\hexo\source_posts目录下生成一个markdown文件：My-New-Post.md<br><img src="http://m1.yea.im/4vx.png" alt=""><br>重新开启服务器就可以看到新建的文章。</p>
 <p><strong>注意：如果没有关闭服务器再新建文章，而是打开新的命令窗口直接新建文章，文章会被新建两次。</strong></p>
 <p>输入下面的命令，将markdown文件生成静态网页。<code>hexo generate</code>该命令执行完后，会在 F:\Hexo\public\ 目录下生成一系列html，css等文件。</p>
-<p>##部署到Github<br>github上创建账号<br>去<a href="https://github.com/注册账号，并建立repository" target="_blank" rel="external">https://github.com/注册账号，并建立repository</a><br>建立仓库名必须是XXX.github.io </p>
+<h2 id="u90E8_u7F72_u5230Github"><a href="#u90E8_u7F72_u5230Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><p>github上创建账号<br>去<a href="https://github.com/注册账号，并建立repository" target="_blank" rel="external">https://github.com/注册账号，并建立repository</a><br>建立仓库名必须是XXX.github.io </p>
 <p>在F:\hexo文件下找到_config.yml文件，将里面的deployment项修改为：</p>
 <blockquote>
 <p>deploy:<br><br>  type: git<br><br>  repository: <a href="https://github.com/username/usernme.github.io.git" target="_blank" rel="external">https://github.com/username/usernme.github.io.git</a><br>  branch: master</p>
 </blockquote>
 <p>username为自己github的账号名。<br></p>
-<p>##报错</p>
-<p><img src="http://m1.yea.im/4vy.jpeg" alt=""><br>输入<code>npm install hexo-deployer-git --save</code>或者<code>cnpm install hexo-deployer-git --save</code>我们应该在安装完hexo就执行此步。<br>再输入<code>hexo generate</code></p>
+<h2 id="u62A5_u9519"><a href="#u62A5_u9519" class="headerlink" title="报错"></a>报错</h2><p><img src="http://m1.yea.im/4vy.jpeg" alt=""><br>输入<code>npm install hexo-deployer-git --save</code>或者<code>cnpm install hexo-deployer-git --save</code>我们应该在安装完hexo就执行此步。<br>再输入<code>hexo generate</code></p>
 <p><strong>注意：有些新用户需要设置 ssh，否则上述命令会失败。ssh 的介绍和设置方法请看官方教程。<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a></strong></p>
 <p>每次修改完文件后要重新<code>hexo g</code>然后<code>hexo d</code>(这是都是命令hexo generate和hexo deploy简写，与上面的命令一致)<br>打开浏览器输入<a href="http://XXX.github.io" target="_blank" rel="external">http://XXX.github.io</a> 就是你的博客了。</p>
 <p>报错spawn git ENOENT</p>
@@ -242,65 +241,6 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 	</div>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/10/hello-world/" class="article-date">
-  	<time datetime="2015-12-10T13:45:19.133Z" itemprop="datePublished">2015-12-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       
